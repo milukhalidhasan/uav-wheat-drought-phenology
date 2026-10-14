@@ -1,0 +1,588 @@
+First_appears_in,Column,Role,Unit,Note
+Plot_Design,Season,key,,2024-25 or 2025-26
+Plot_Design,Season_ID,key,,1 or 2
+Plot_Design,Plot_UID,key,,Unique across seasons
+Plot_Design,Plot_ID,key,,Repeats between seasons
+Plot_Design,Field_Plot_No,design,,"Field plot number, 2024-25 only"
+Plot_Design,Water_Regime,design,,"D drought, I irrigated"
+Plot_Design,Water_Regime_Label,design,,Managed drought / Irrigated
+Plot_Design,Treatment,design,,T0-T11
+Plot_Design,Treatment_Num,design,,"0-11, numeric form of Treatment"
+Plot_Design,N_Level,design,,"N0-N3, nitrogen factor level"
+Plot_Design,N_kg_ha,design,kg/ha,"Nitrogen dose: 0, 210, 300, 390"
+Plot_Design,N_Desc,design,,Control / Low / Medium / High
+Plot_Design,Seaweed_Level,design,,"S0-S2, seaweed factor level"
+Plot_Design,Seaweed_pct,design,%,"Seaweed extract dose: 0, 4, 10"
+Plot_Design,Seaweed_Desc,design,,No application / Medium / High
+Plot_Design,Replication,design,,R1-R4
+Plot_Design,dCHM_relative_plot,structure,m,"2024-25 only, plot-level canopy height"
+Harvest_PlotLevel,Plant_Length_cm,agronomic,cm,At harvest
+Harvest_PlotLevel,Root_Length_cm,agronomic,cm,At harvest
+Harvest_PlotLevel,Tiller_No,yield_component,count/plant,
+Harvest_PlotLevel,Spike_Length_cm,yield_component,cm,
+Harvest_PlotLevel,Total_Grain_per_Plant,yield_component,count,
+Harvest_PlotLevel,TSW_g,yield_component,g,Thousand seed weight
+Harvest_PlotLevel,Fresh_Biomass_t_ha,agronomic,t/ha,
+Harvest_PlotLevel,Biological_Yield_t_ha,yield_target,t/ha,Total above-ground dry yield
+Harvest_PlotLevel,Grain_Yield_t_ha,yield_target,t/ha,Primary response variable
+Harvest_PlotLevel,Harvest_Index,yield_target,ratio,Grain yield / biological yield
+Harvest_PlotLevel,H2O2_umol_per_gFW,stress_biochem,umol/g FW,
+Harvest_PlotLevel,MDA_nmol_per_gFW,stress_biochem,nmol/g FW,"2024-25 only, not plot-unique"
+Physiology_PlotLevel,Physiology_Source,provenance,,How the four shared physiology variables were derived
+Physiology_PlotLevel,gsw,physiology,mol/m2/s,Stomatal conductance to water
+Physiology_PlotLevel,PhiPS2,physiology,ratio,Operating PSII efficiency
+Physiology_PlotLevel,ETR,physiology,umol/m2/s,Electron transport rate
+Physiology_PlotLevel,Tleaf,physiology,degC,Leaf temperature
+Physiology_PlotLevel,gbw,physiology,mol/m2/s,"Boundary-layer conductance, 2024-25 only"
+Physiology_PlotLevel,gtw,physiology,mol/m2/s,"Total conductance to water, 2024-25 only"
+Physiology_PlotLevel,E_apparent,physiology,mol/m2/s,"Apparent transpiration, 2024-25 only"
+Physiology_PlotLevel,VPleaf,physiology,kPa,"Leaf vapour pressure, 2024-25 only"
+Physiology_PlotLevel,VPDleaf,physiology,kPa,"Leaf vapour pressure deficit, 2024-25 only"
+Physiology_PlotLevel,H2O_leaf,physiology,mmol/mol,"Leaf water vapour mole fraction, 2024-25 only"
+Physiology_PlotLevel,Fs,physiology,relative,"Steady-state fluorescence, 2024-25 only"
+Physiology_PlotLevel,Fm.,physiology,relative,"Light-adapted maximum fluorescence, 2024-25 only"
+Physiology_PlotLevel,rh_s,physiology,%,"Sample relative humidity, 2024-25 only"
+Physiology_PlotLevel,Qamb,physiology,umol/m2/s,"Ambient PAR, 2024-25 only"
+Physiology_PlotLevel,ETR_DAS80,physiology,umol/m2/s,ETR at DAS80
+Physiology_PlotLevel,ETR_DAS88,physiology,umol/m2/s,ETR at DAS88
+Physiology_PlotLevel,PhiPS2_DAS80,physiology,ratio,PhiPS2 at DAS80
+Physiology_PlotLevel,PhiPS2_DAS88,physiology,ratio,PhiPS2 at DAS88
+Physiology_PlotLevel,Tleaf_DAS80,physiology,degC,Tleaf at DAS80
+Physiology_PlotLevel,Tleaf_DAS88,physiology,degC,Tleaf at DAS88
+Physiology_PlotLevel,gsw_DAS80,physiology,mol/m2/s,gsw at DAS80
+Physiology_PlotLevel,gsw_DAS88,physiology,mol/m2/s,gsw at DAS88
+Ground_TimeSeries,Measure_Date,time,date,Ground measurement date; 2025-26 only
+Ground_TimeSeries,DAS,time,days,Days after sowing
+Ground_TimeSeries,Growth_Stage,time,,Recorded growth stage; 2025-26 only
+Ground_TimeSeries,Chlorophyll,ground,SPAD-like,Per-date reading
+Ground_TimeSeries,Plant_height_cm,ground,cm,Per-date reading
+Ground_TimeSeries,Soil_Temp_C,ground,degC,Per-date reading
+Ground_TimeSeries,Soil_Moisture_pct,ground,%,"Per-date reading, 2024-25 only"
+Ground_PlotSummary,Chlorophyll_mean,ground,SPAD-like,Campaign mean
+Ground_PlotSummary,Chlorophyll_max,ground,SPAD-like,Campaign maximum
+Ground_PlotSummary,Chlorophyll_last,ground,SPAD-like,Last recorded date
+Ground_PlotSummary,Plant_height_max_cm,ground,cm,Campaign maximum
+Ground_PlotSummary,Plant_height_mean_cm,ground,cm,Campaign mean
+Ground_PlotSummary,Soil_Temp_mean_C,ground,degC,Campaign mean
+Ground_PlotSummary,Soil_Moisture_mean_pct,ground,%,2024-25 only
+Ground_PlotSummary,n_ground_dates,ground,count,Distinct ground dates behind the plot summary
+Spectral_TimeSeries,Flight_Date,time,date,Calendar date of the UAV flight
+Spectral_TimeSeries,DOY_calendar,time,day of year,"Calendar day of year. WRAPS at 1 January (e.g. 360 -> 6 mid-season), so it is NOT a usable time axis. Use DAS."
+Spectral_TimeSeries,Flight_No,time,count,"Flight order within the season, 1 = first"
+Spectral_TimeSeries,blue,spectral_band,reflectance,
+Spectral_TimeSeries,green,spectral_band,reflectance,
+Spectral_TimeSeries,red,spectral_band,reflectance,
+Spectral_TimeSeries,rededge,spectral_band,reflectance,
+Spectral_TimeSeries,nir,spectral_band,reflectance,
+Spectral_TimeSeries,Thermal,spectral_band,reflectance,
+Spectral_TimeSeries,dchm,spectral_band,reflectance,
+Spectral_TimeSeries,MGVRI,spectral_index,index units,
+Spectral_TimeSeries,NDVI,spectral_index,index units,
+Spectral_TimeSeries,MSAVI,spectral_index,index units,
+Spectral_TimeSeries,SAVI,spectral_index,index units,
+Spectral_TimeSeries,OSAVI,spectral_index,index units,
+Spectral_TimeSeries,ARVI,spectral_index,index units,
+Spectral_TimeSeries,EVI,spectral_index,index units,
+Spectral_TimeSeries,GCI,spectral_index,index units,
+Spectral_TimeSeries,SIPI,spectral_index,index units,
+Spectral_TimeSeries,CI(rededge),spectral_index,index units,
+Spectral_TimeSeries,NDRE,spectral_index,index units,
+Spectral_TimeSeries,CVI,spectral_index,index units,
+Spectral_TimeSeries,gNDVI,spectral_index,index units,
+Spectral_TimeSeries,bNDVI,spectral_index,index units,
+Spectral_TimeSeries,PI,spectral_index,index units,
+Spectral_TimeSeries,VARI,spectral_index,index units,
+Spectral_TimeSeries,ENDVI,spectral_index,index units,
+Spectral_TimeSeries,GDVI,spectral_index,index units,
+Spectral_TimeSeries,PSRI,spectral_index,index units,
+Spectral_TimeSeries,MSRGR,spectral_index,index units,
+Spectral_TimeSeries,TNDGR,spectral_index,index units,
+Spectral_TimeSeries,MSR,spectral_index,index units,
+Spectral_TimeSeries,MCARI,spectral_index,index units,
+Spectral_TimeSeries,TCARI,spectral_index,index units,
+Spectral_TimeSeries,MTCI,spectral_index,index units,
+Spectral_TimeSeries,TCARI/OSAVI,spectral_index,index units,
+Spectral_TimeSeries,MCARI/OSAVI,spectral_index,index units,
+Spectral_TimeSeries,RVI,spectral_index,index units,
+Spectral_TimeSeries,DVI,spectral_index,index units,
+Spectral_TimeSeries,ARI,spectral_index,index units,
+Spectral_TimeSeries,ARI2,spectral_index,index units,
+Spectral_TimeSeries,SRPI,spectral_index,index units,
+Spectral_TimeSeries,NPCI,spectral_index,index units,
+Spectral_TimeSeries,VDVI,spectral_index,index units,
+Spectral_TimeSeries,WDRVI,spectral_index,index units,
+Spectral_TimeSeries,TVI,spectral_index,index units,
+Spectral_TimeSeries,RDVI,spectral_index,index units,
+Spectral_TimeSeries,SR,spectral_index,index units,
+Spectral_Interp_CommonDAS,blue_DAS20,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,blue_DAS30,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,blue_DAS40,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,blue_DAS50,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,blue_DAS60,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,blue_DAS70,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,blue_DAS80,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS20,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS30,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS40,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS50,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS60,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS70,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,green_DAS80,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS20,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS30,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS40,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS50,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS60,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS70,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,red_DAS80,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS20,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS30,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS40,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS50,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS60,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS70,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,rededge_DAS80,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS20,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS30,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS40,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS50,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS60,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS70,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,nir_DAS80,spectral_band,reflectance,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MGVRI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSAVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SAVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,OSAVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,EVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GCI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SIPI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CI(rededge)_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NDRE_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,CVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,gNDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,bNDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VARI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ENDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,GDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,PSRI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSRGR_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TNDGR_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MSR_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MTCI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TCARI/OSAVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,MCARI/OSAVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,DVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,ARI2_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,SRPI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,NPCI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,VDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,WDRVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,TVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS20,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS30,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS40,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS50,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS60,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS70,spectral_index,index units,Interpolated to a common DAS
+Spectral_Interp_CommonDAS,RDVI_DAS80,spectral_index,index units,Interpolated to a common DAS
+Phenology_Parameters,Index,key,,Vegetation index the curve was fitted to
+Phenology_Parameters,Param_Notation_Source,provenance,,Parameter names used in the source workbook
+Phenology_Parameters,Baseline,phenology,index units,Fitted curve baseline
+Phenology_Parameters,Amplitude,phenology,index units,Seasonal amplitude
+Phenology_Parameters,Peak_asymptote,phenology,index units,Baseline + amplitude
+Phenology_Parameters,t1_mid_greenup,phenology,DAS,Green-up inflection
+Phenology_Parameters,t2_mid_senescence,phenology,DAS,Senescence inflection
+Phenology_Parameters,k1_rate_greenup,phenology,per day,Green-up steepness
+Phenology_Parameters,k2_rate_senescence,phenology,per day,Senescence steepness
+Phenology_Parameters,R2,fit_quality,ratio,Curve fit R2
+Phenology_Parameters,RMSE,fit_quality,index units,Curve fit RMSE
+Phenology_Parameters,Params_At_Bound,fit_quality,count,Parameters pinned at an optimiser bound
+Phenology_Parameters,AUC_source,provenance,index units x days,AUC as published in the source workbook
+Phenology_Parameters,SOS,phenology,DAS,Start of season
+Phenology_Parameters,EOG,phenology,DAS,End of green-up
+Phenology_Parameters,POS,phenology,DAS,Peak of season
+Phenology_Parameters,SOD,phenology,DAS,Start of decline
+Phenology_Parameters,EOS,phenology,DAS,End of season
+Phenology_Parameters,Peak_value,phenology,index units,Numerical maximum of the curve
+Phenology_Parameters,Greenup_Duration,phenology,days,EOG - SOS
+Phenology_Parameters,Plateau_Duration,phenology,days,SOD - EOG
+Phenology_Parameters,Senescence_Duration,phenology,days,EOS - SOD
+Phenology_Parameters,Green_Duration,phenology,days,t2 - t1
+Phenology_Parameters,LOS,phenology,days,EOS - SOS
+Phenology_Parameters,Rate_greenup,phenology,index units/day,Amplitude * k1 / 4
+Phenology_Parameters,Rate_senescence,phenology,index units/day,Amplitude * k2 / 4
+Phenology_Parameters,AUC_native,phenology,index units x days,"Own flight window, reproduces source"
+Phenology_Parameters,AUC_common_19_83,phenology,index units x days,Cross-season comparable
+Phenology_Parameters,AUC_above_base_common,phenology,index units x days,Baseline removed
+Phenology_Parameters,AUC_pheno_SOS_EOS,phenology,index units x days,SOS to EOS
+Phenology_Parameters,AUC_common_per_day,phenology,index units,AUC_common / 64
+Phenology_Parameters,n_stages_outside_common,fit_quality,count,Stages falling outside 19-83 DAS
+Phenology_Parameters,n_stages_outside_native,fit_quality,count,Stages extrapolated beyond the season's own flight window; >0 means SOS/EOS rest on no data
+Phenology_Parameters,Fit_Quality_Flag,fit_quality,,"ok / check / poor, from R2 and Params_At_Bound"
+Phenology_Wide,CIrededge_AUC_above_base_common,phenology,index units x days,AUC_above_base_common for index CIrededge
+Phenology_Wide,CIrededge_AUC_common_19_83,phenology,index units x days,AUC_common_19_83 for index CIrededge
+Phenology_Wide,CIrededge_AUC_pheno_SOS_EOS,phenology,index units x days,AUC_pheno_SOS_EOS for index CIrededge
+Phenology_Wide,CIrededge_Amplitude,phenology,index units,Amplitude for index CIrededge
+Phenology_Wide,CIrededge_Baseline,phenology,index units,Baseline for index CIrededge
+Phenology_Wide,CIrededge_EOG,phenology,DAS,EOG for index CIrededge
+Phenology_Wide,CIrededge_EOS,phenology,DAS,EOS for index CIrededge
+Phenology_Wide,CIrededge_Green_Duration,phenology,days,Green_Duration for index CIrededge
+Phenology_Wide,CIrededge_Greenup_Duration,phenology,days,Greenup_Duration for index CIrededge
+Phenology_Wide,CIrededge_LOS,phenology,days,LOS for index CIrededge
+Phenology_Wide,CIrededge_POS,phenology,DAS,POS for index CIrededge
+Phenology_Wide,CIrededge_Peak_asymptote,phenology,index units,Peak_asymptote for index CIrededge
+Phenology_Wide,CIrededge_Peak_value,phenology,index units,Peak_value for index CIrededge
+Phenology_Wide,CIrededge_Plateau_Duration,phenology,days,Plateau_Duration for index CIrededge
+Phenology_Wide,CIrededge_R2,fit_quality,ratio,R2 for index CIrededge
+Phenology_Wide,CIrededge_Rate_greenup,phenology,index units/day,Rate_greenup for index CIrededge
+Phenology_Wide,CIrededge_Rate_senescence,phenology,index units/day,Rate_senescence for index CIrededge
+Phenology_Wide,CIrededge_SOD,phenology,DAS,SOD for index CIrededge
+Phenology_Wide,CIrededge_SOS,phenology,DAS,SOS for index CIrededge
+Phenology_Wide,CIrededge_Senescence_Duration,phenology,days,Senescence_Duration for index CIrededge
+Phenology_Wide,CIrededge_k1_rate_greenup,phenology,per day,k1_rate_greenup for index CIrededge
+Phenology_Wide,CIrededge_k2_rate_senescence,phenology,per day,k2_rate_senescence for index CIrededge
+Phenology_Wide,CIrededge_t1_mid_greenup,phenology,DAS,t1_mid_greenup for index CIrededge
+Phenology_Wide,CIrededge_t2_mid_senescence,phenology,DAS,t2_mid_senescence for index CIrededge
+Phenology_Wide,GCI_AUC_above_base_common,phenology,index units x days,AUC_above_base_common for index GCI
+Phenology_Wide,GCI_AUC_common_19_83,phenology,index units x days,AUC_common_19_83 for index GCI
+Phenology_Wide,GCI_AUC_pheno_SOS_EOS,phenology,index units x days,AUC_pheno_SOS_EOS for index GCI
+Phenology_Wide,GCI_Amplitude,phenology,index units,Amplitude for index GCI
+Phenology_Wide,GCI_Baseline,phenology,index units,Baseline for index GCI
+Phenology_Wide,GCI_EOG,phenology,DAS,EOG for index GCI
+Phenology_Wide,GCI_EOS,phenology,DAS,EOS for index GCI
+Phenology_Wide,GCI_Green_Duration,phenology,days,Green_Duration for index GCI
+Phenology_Wide,GCI_Greenup_Duration,phenology,days,Greenup_Duration for index GCI
+Phenology_Wide,GCI_LOS,phenology,days,LOS for index GCI
+Phenology_Wide,GCI_POS,phenology,DAS,POS for index GCI
+Phenology_Wide,GCI_Peak_asymptote,phenology,index units,Peak_asymptote for index GCI
+Phenology_Wide,GCI_Peak_value,phenology,index units,Peak_value for index GCI
+Phenology_Wide,GCI_Plateau_Duration,phenology,days,Plateau_Duration for index GCI
+Phenology_Wide,GCI_R2,fit_quality,ratio,R2 for index GCI
+Phenology_Wide,GCI_Rate_greenup,phenology,index units/day,Rate_greenup for index GCI
+Phenology_Wide,GCI_Rate_senescence,phenology,index units/day,Rate_senescence for index GCI
+Phenology_Wide,GCI_SOD,phenology,DAS,SOD for index GCI
+Phenology_Wide,GCI_SOS,phenology,DAS,SOS for index GCI
+Phenology_Wide,GCI_Senescence_Duration,phenology,days,Senescence_Duration for index GCI
+Phenology_Wide,GCI_k1_rate_greenup,phenology,per day,k1_rate_greenup for index GCI
+Phenology_Wide,GCI_k2_rate_senescence,phenology,per day,k2_rate_senescence for index GCI
+Phenology_Wide,GCI_t1_mid_greenup,phenology,DAS,t1_mid_greenup for index GCI
+Phenology_Wide,GCI_t2_mid_senescence,phenology,DAS,t2_mid_senescence for index GCI
+Phenology_Wide,NDRE_AUC_above_base_common,phenology,index units x days,AUC_above_base_common for index NDRE
+Phenology_Wide,NDRE_AUC_common_19_83,phenology,index units x days,AUC_common_19_83 for index NDRE
+Phenology_Wide,NDRE_AUC_pheno_SOS_EOS,phenology,index units x days,AUC_pheno_SOS_EOS for index NDRE
+Phenology_Wide,NDRE_Amplitude,phenology,index units,Amplitude for index NDRE
+Phenology_Wide,NDRE_Baseline,phenology,index units,Baseline for index NDRE
+Phenology_Wide,NDRE_EOG,phenology,DAS,EOG for index NDRE
+Phenology_Wide,NDRE_EOS,phenology,DAS,EOS for index NDRE
+Phenology_Wide,NDRE_Green_Duration,phenology,days,Green_Duration for index NDRE
+Phenology_Wide,NDRE_Greenup_Duration,phenology,days,Greenup_Duration for index NDRE
+Phenology_Wide,NDRE_LOS,phenology,days,LOS for index NDRE
+Phenology_Wide,NDRE_POS,phenology,DAS,POS for index NDRE
+Phenology_Wide,NDRE_Peak_asymptote,phenology,index units,Peak_asymptote for index NDRE
+Phenology_Wide,NDRE_Peak_value,phenology,index units,Peak_value for index NDRE
+Phenology_Wide,NDRE_Plateau_Duration,phenology,days,Plateau_Duration for index NDRE
+Phenology_Wide,NDRE_R2,fit_quality,ratio,R2 for index NDRE
+Phenology_Wide,NDRE_Rate_greenup,phenology,index units/day,Rate_greenup for index NDRE
+Phenology_Wide,NDRE_Rate_senescence,phenology,index units/day,Rate_senescence for index NDRE
+Phenology_Wide,NDRE_SOD,phenology,DAS,SOD for index NDRE
+Phenology_Wide,NDRE_SOS,phenology,DAS,SOS for index NDRE
+Phenology_Wide,NDRE_Senescence_Duration,phenology,days,Senescence_Duration for index NDRE
+Phenology_Wide,NDRE_k1_rate_greenup,phenology,per day,k1_rate_greenup for index NDRE
+Phenology_Wide,NDRE_k2_rate_senescence,phenology,per day,k2_rate_senescence for index NDRE
+Phenology_Wide,NDRE_t1_mid_greenup,phenology,DAS,t1_mid_greenup for index NDRE
+Phenology_Wide,NDRE_t2_mid_senescence,phenology,DAS,t2_mid_senescence for index NDRE
+Phenology_Wide,NDVI_AUC_above_base_common,phenology,index units x days,AUC_above_base_common for index NDVI
+Phenology_Wide,NDVI_AUC_common_19_83,phenology,index units x days,AUC_common_19_83 for index NDVI
+Phenology_Wide,NDVI_AUC_pheno_SOS_EOS,phenology,index units x days,AUC_pheno_SOS_EOS for index NDVI
+Phenology_Wide,NDVI_Amplitude,phenology,index units,Amplitude for index NDVI
+Phenology_Wide,NDVI_Baseline,phenology,index units,Baseline for index NDVI
+Phenology_Wide,NDVI_EOG,phenology,DAS,EOG for index NDVI
+Phenology_Wide,NDVI_EOS,phenology,DAS,EOS for index NDVI
+Phenology_Wide,NDVI_Green_Duration,phenology,days,Green_Duration for index NDVI
+Phenology_Wide,NDVI_Greenup_Duration,phenology,days,Greenup_Duration for index NDVI
+Phenology_Wide,NDVI_LOS,phenology,days,LOS for index NDVI
+Phenology_Wide,NDVI_POS,phenology,DAS,POS for index NDVI
+Phenology_Wide,NDVI_Peak_asymptote,phenology,index units,Peak_asymptote for index NDVI
+Phenology_Wide,NDVI_Peak_value,phenology,index units,Peak_value for index NDVI
+Phenology_Wide,NDVI_Plateau_Duration,phenology,days,Plateau_Duration for index NDVI
+Phenology_Wide,NDVI_R2,fit_quality,ratio,R2 for index NDVI
+Phenology_Wide,NDVI_Rate_greenup,phenology,index units/day,Rate_greenup for index NDVI
+Phenology_Wide,NDVI_Rate_senescence,phenology,index units/day,Rate_senescence for index NDVI
+Phenology_Wide,NDVI_SOD,phenology,DAS,SOD for index NDVI
+Phenology_Wide,NDVI_SOS,phenology,DAS,SOS for index NDVI
+Phenology_Wide,NDVI_Senescence_Duration,phenology,days,Senescence_Duration for index NDVI
+Phenology_Wide,NDVI_k1_rate_greenup,phenology,per day,k1_rate_greenup for index NDVI
+Phenology_Wide,NDVI_k2_rate_senescence,phenology,per day,k2_rate_senescence for index NDVI
+Phenology_Wide,NDVI_t1_mid_greenup,phenology,DAS,t1_mid_greenup for index NDVI
+Phenology_Wide,NDVI_t2_mid_senescence,phenology,DAS,t2_mid_senescence for index NDVI
+Phenology_Wide,RVI_AUC_above_base_common,phenology,index units x days,AUC_above_base_common for index RVI
+Phenology_Wide,RVI_AUC_common_19_83,phenology,index units x days,AUC_common_19_83 for index RVI
+Phenology_Wide,RVI_AUC_pheno_SOS_EOS,phenology,index units x days,AUC_pheno_SOS_EOS for index RVI
+Phenology_Wide,RVI_Amplitude,phenology,index units,Amplitude for index RVI
+Phenology_Wide,RVI_Baseline,phenology,index units,Baseline for index RVI
+Phenology_Wide,RVI_EOG,phenology,DAS,EOG for index RVI
+Phenology_Wide,RVI_EOS,phenology,DAS,EOS for index RVI
+Phenology_Wide,RVI_Green_Duration,phenology,days,Green_Duration for index RVI
+Phenology_Wide,RVI_Greenup_Duration,phenology,days,Greenup_Duration for index RVI
+Phenology_Wide,RVI_LOS,phenology,days,LOS for index RVI
+Phenology_Wide,RVI_POS,phenology,DAS,POS for index RVI
+Phenology_Wide,RVI_Peak_asymptote,phenology,index units,Peak_asymptote for index RVI
+Phenology_Wide,RVI_Peak_value,phenology,index units,Peak_value for index RVI
+Phenology_Wide,RVI_Plateau_Duration,phenology,days,Plateau_Duration for index RVI
+Phenology_Wide,RVI_R2,fit_quality,ratio,R2 for index RVI
+Phenology_Wide,RVI_Rate_greenup,phenology,index units/day,Rate_greenup for index RVI
+Phenology_Wide,RVI_Rate_senescence,phenology,index units/day,Rate_senescence for index RVI
+Phenology_Wide,RVI_SOD,phenology,DAS,SOD for index RVI
+Phenology_Wide,RVI_SOS,phenology,DAS,SOS for index RVI
+Phenology_Wide,RVI_Senescence_Duration,phenology,days,Senescence_Duration for index RVI
+Phenology_Wide,RVI_k1_rate_greenup,phenology,per day,k1_rate_greenup for index RVI
+Phenology_Wide,RVI_k2_rate_senescence,phenology,per day,k2_rate_senescence for index RVI
+Phenology_Wide,RVI_t1_mid_greenup,phenology,DAS,t1_mid_greenup for index RVI
+Phenology_Wide,RVI_t2_mid_senescence,phenology,DAS,t2_mid_senescence for index RVI
+Phenology_Wide,gNDVI_AUC_above_base_common,phenology,index units x days,AUC_above_base_common for index gNDVI
+Phenology_Wide,gNDVI_AUC_common_19_83,phenology,index units x days,AUC_common_19_83 for index gNDVI
+Phenology_Wide,gNDVI_AUC_pheno_SOS_EOS,phenology,index units x days,AUC_pheno_SOS_EOS for index gNDVI
+Phenology_Wide,gNDVI_Amplitude,phenology,index units,Amplitude for index gNDVI
+Phenology_Wide,gNDVI_Baseline,phenology,index units,Baseline for index gNDVI
+Phenology_Wide,gNDVI_EOG,phenology,DAS,EOG for index gNDVI
+Phenology_Wide,gNDVI_EOS,phenology,DAS,EOS for index gNDVI
+Phenology_Wide,gNDVI_Green_Duration,phenology,days,Green_Duration for index gNDVI
+Phenology_Wide,gNDVI_Greenup_Duration,phenology,days,Greenup_Duration for index gNDVI
+Phenology_Wide,gNDVI_LOS,phenology,days,LOS for index gNDVI
+Phenology_Wide,gNDVI_POS,phenology,DAS,POS for index gNDVI
+Phenology_Wide,gNDVI_Peak_asymptote,phenology,index units,Peak_asymptote for index gNDVI
+Phenology_Wide,gNDVI_Peak_value,phenology,index units,Peak_value for index gNDVI
+Phenology_Wide,gNDVI_Plateau_Duration,phenology,days,Plateau_Duration for index gNDVI
+Phenology_Wide,gNDVI_R2,fit_quality,ratio,R2 for index gNDVI
+Phenology_Wide,gNDVI_Rate_greenup,phenology,index units/day,Rate_greenup for index gNDVI
+Phenology_Wide,gNDVI_Rate_senescence,phenology,index units/day,Rate_senescence for index gNDVI
+Phenology_Wide,gNDVI_SOD,phenology,DAS,SOD for index gNDVI
+Phenology_Wide,gNDVI_SOS,phenology,DAS,SOS for index gNDVI
+Phenology_Wide,gNDVI_Senescence_Duration,phenology,days,Senescence_Duration for index gNDVI
+Phenology_Wide,gNDVI_k1_rate_greenup,phenology,per day,k1_rate_greenup for index gNDVI
+Phenology_Wide,gNDVI_k2_rate_senescence,phenology,per day,k2_rate_senescence for index gNDVI
+Phenology_Wide,gNDVI_t1_mid_greenup,phenology,DAS,t1_mid_greenup for index gNDVI
+Phenology_Wide,gNDVI_t2_mid_senescence,phenology,DAS,t2_mid_senescence for index gNDVI
