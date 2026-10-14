@@ -75,9 +75,6 @@ See [data/README.md](data/README.md). In short:
 └── figures/             selected figures from both analyses
 ```
 
-## How this code was written
-The code was written with AI assistance (Claude, Anthropic). The field and laboratory data were collected by the author. The main tables are reproduced independently in Python and R.
-
 ## Citation
 Milu, M.K.H., et al. *Senescence timing and canopy temperature reveal drought stress in wheat across seasons: a two-season UAV study.* Manuscript in preparation. Please cite this repository until the paper is published.
 
