@@ -79,7 +79,7 @@ See [data/README.md](data/README.md). In short:
 The code was written with AI assistance (Claude, Anthropic). The field and laboratory data were collected by the author. The main tables are reproduced independently in Python and R.
 
 ## Citation
-Milu, M.K.H., et al. *UAV-Based Impact Assessment of Seaweed Extract (Gracilaria spp.) and Nitrogen Fertilizer on Wheat Growth and Yield under Drought Stress Using Machine Learning and Double Logistic Model.* Manuscript in preparation. Please cite this repository until the paper is published.
+Milu, M.K.H., et al. *Senescence timing and canopy temperature reveal drought stress in wheat across seasons: a two-season UAV study.* Manuscript in preparation. Please cite this repository until the paper is published.
 
 ## License
 Code: MIT (see [LICENSE](LICENSE)). The figures and the (withheld) field data are not covered by the code license.
